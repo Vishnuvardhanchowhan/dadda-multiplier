@@ -1,0 +1,426 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity HA is
+    port(A,B:in std_logic;
+        s,c:out std_logic);
+end entity HA;
+architecture behav of HA is
+begin
+    s <= A xor B;
+    c <= A and B;
+end behav;
+
+entity FA is
+    port(A,B,C:in std_logic;
+        s,c:out std_logic);
+end entity FA;
+architecture behav of FA is
+begin
+    s <= A xor (B xor C);
+    c <= A and (B or C) or (B and C);
+end behav;
+
+entity MAC is
+    port(A,B,C:in std_logic_vector(15 downto 0);
+        MA:out std_logic_vector(31 downto 0));
+end entity MAC;
+architecture behav of MAC is
+    component FA is
+        port(A,B,C:in std_logic;
+            S,Cout:out std_logic);
+    end component;
+    component HA is
+        port(A,B:in std_logic;
+            S,C:out std_logic);
+    end component;
+    signal C2,C3,C4,C5,C6,C7,C8.C9,C10,C11,C12,C13,C14,C15,C16,C17,C18,C19,C20,C21,C22,C23,C24,C25,C26,C27,C28,C29,C30: std_logic_vector(14 downto 0);
+    signal S1,S2: std_logic_vector(31 downto 0);
+    signal P0,P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,P16,P17,P18,P19,P20,P21,P22,P23,P24,P25,P26,P27,P28,P29,P30: std_logic_vector(16 DOWNTO 0);
+begin
+    -- generating partial products
+    P0(0) <= A(0) and B(0);
+    P1(0) <= A(1) and B(0);
+    P2(0) <= A(2) and B(0);
+    P3(0) <= A(3) and B(0);
+    P4(0) <= A(4) and B(0);
+    P5(0) <= A(5) and B(0);
+    P6(0) <= A(6) and B(0);
+    P7(0) <= A(7) and B(0);
+    P8(0) <= A(8) and B(0);
+    P9(0) <= A(9) and B(0);
+    P10(0) <= A(10) and B(0);
+    P11(0) <= A(11) and B(0);
+    P12(0) <= A(12) and B(0);
+    P13(0) <= A(13) and B(0);
+    P14(0) <= A(14) and B(0);
+    P15(0) <= A(15) and B(0);
+
+    P1(1) <= A(0) and B(1);
+    P2(1) <= A(1) and B(1);
+    P3(1) <= A(2) and B(1);
+    P4(1) <= A(3) and B(1);
+    P5(1) <= A(4) and B(1);
+    P6(1) <= A(5) and B(1);
+    P7(1) <= A(6) and B(1);
+    P8(1) <= A(7) and B(1);
+    P9(1) <= A(8) and B(1);
+    P11(1) <= A(9) and B(1);
+    P11(1) <= A(10) and B(1);
+    P12(1) <= A(11) and B(1);
+    P13(1) <= A(12) and B(1);
+    P14(1) <= A(13) and B(1);
+    P15(1) <= A(14) and B(1);
+    P16(1) <= A(15) and B(1);
+
+    P2(2) <= A(0) and B(2);
+    P3(2) <= A(1) and B(2);
+    P4(2) <= A(2) and B(2);
+    P5(2) <= A(3) and B(2);
+    P6(2) <= A(4) and B(2);
+    P7(2) <= A(5) and B(2);
+    P8(2) <= A(6) and B(2);
+    P9(2) <= A(7) and B(2);
+    P10(2) <= A(8) and B(2);
+    P11(2) <= A(9) and B(2);
+    P12(2) <= A(10) and B(2);
+    P13(2) <= A(11) and B(2);
+    P14(2) <= A(12) and B(2);
+    P15(2) <= A(13) and B(2);
+    P16(2) <= A(14) and B(2);
+    P17(2) <= A(15) and B(2);
+
+    P3(3) <= A(0) and B(3);
+    P4(3) <= A(1) and B(3);
+    P5(3) <= A(2) and B(3);
+    P6(3) <= A(3) and B(3);
+    P7(3) <= A(4) and B(3);
+    P8(3) <= A(5) and B(3);
+    P9(3) <= A(6) and B(3);
+    P10(3) <= A(7) and B(3);
+    P11(3) <= A(8) and B(3);
+    P12(3) <= A(9) and B(3);
+    P13(3) <= A(10) and B(3);
+    P14(3) <= A(11) and B(3);
+    P15(3) <= A(12) and B(3);
+    P16(3) <= A(13) and B(3);
+    P17(3) <= A(14) and B(3);
+    P18(3) <= A(15) and B(3);
+
+    P4(4) <= A(0) and B(4);
+    P5(4) <= A(1) and B(4);
+    P6(4) <= A(2) and B(4);
+    P7(4) <= A(3) and B(4);
+    P8(4) <= A(4) and B(4);
+    P9(4) <= A(5) and B(4);
+    P10(4) <= A(6) and B(4);
+    P11(4) <= A(7) and B(4);
+    P12(4) <= A(8) and B(4);
+    P13(4) <= A(9) and B(4);
+    P14(4) <= A(10) and B(4);
+    P15(4) <= A(11) and B(4);
+    P16(4) <= A(12) and B(4);
+    P17(4) <= A(13) and B(4);
+    P18(4) <= A(14) and B(4);
+    P19(4) <= A(15) and B(4);
+
+    P5(5) <= A(0) and B(5);
+    P6(5) <= A(1) and B(5);
+    P7(5) <= A(2) and B(5);
+    P8(5) <= A(3) and B(5);
+    P9(5) <= A(4) and B(5);
+    P10(5) <= A(5) and B(5);
+    P11(5) <= A(6) and B(5);
+    P12(5) <= A(7) and B(5);
+    P13(5) <= A(8) and B(5);
+    P14(5) <= A(9) and B(5);
+    P15(5) <= A(10) and B(5);
+    P16(5) <= A(11) and B(5);
+    P17(5) <= A(12) and B(5);
+    P18(5) <= A(13) and B(5);
+    P19(5) <= A(14) and B(5);
+    P20(5) <= A(15) and B(5);
+
+    P6(6) <= A(0) and B(6);
+    P7(6) <= A(1) and B(6);
+    P8(6) <= A(2) and B(6);
+    P9(6) <= A(3) and B(6);
+    P10(6) <= A(4) and B(6);
+    P11(6) <= A(5) and B(6);
+    P12(6) <= A(6) and B(6);
+    P13(6) <= A(7) and B(6);
+    P14(6) <= A(8) and B(6);
+    P15(6) <= A(9) and B(6);
+    P16(6) <= A(10) and B(6);
+    P17(6) <= A(11) and B(6);
+    P18(6) <= A(12) and B(6);
+    P19(6) <= A(13) and B(6);
+    P20(6) <= A(14) and B(6);
+    P21(6) <= A(15) and B(6);
+
+    P7(7) <= A(0) and B(7);
+    P8(7) <= A(1) and B(7);
+    P9(7) <= A(2) and B(7);
+    P10(7) <= A(3) and B(7);
+    P11(7) <= A(4) and B(7);
+    P12(7) <= A(5) and B(7);
+    P13(7) <= A(6) and B(7);
+    P14(7) <= A(7) and B(7);
+    P15(7) <= A(8) and B(7);
+    P16(7) <= A(9) and B(7);
+    P17(7) <= A(10) and B(7);
+    P18(7) <= A(11) and B(7);
+    P19(7) <= A(12) and B(7);
+    P20(7) <= A(13) and B(7);
+    P21(7) <= A(14) and B(7);
+    P22(7) <= A(15) and B(7);
+
+    P8(8) <= A(0) and B(8);
+    P9(8) <= A(1) and B(8);
+    P10(8) <= A(2) and B(8);
+    P11(8) <= A(3) and B(8);
+    P12(8) <= A(4) and B(8);
+    P13(8) <= A(5) and B(8);
+    P14(8) <= A(6) and B(8);
+    P15(8) <= A(7) and B(8);
+    P16(8) <= A(8) and B(8);
+    P17(8) <= A(9) and B(8);
+    P18(8) <= A(10) and B(8);
+    P19(8) <= A(11) and B(8);
+    P20(8) <= A(12) and B(8);
+    P21(8) <= A(13) and B(8);
+    P22(8) <= A(14) and B(8);
+    P23(8) <= A(15) and B(8);
+
+    P9(9) <= A(0) and B(9);
+    P10(9) <= A(1) and B(9);
+    P11(9) <= A(2) and B(9);
+    P12(9) <= A(3) and B(9);
+    P13(9) <= A(4) and B(9);
+    P14(9) <= A(5) and B(9);
+    P15(9) <= A(6) and B(9);
+    P16(9) <= A(7) and B(9);
+    P17(9) <= A(8) and B(9);
+    P18(9) <= A(9) and B(9);
+    P19(9) <= A(10) and B(9);
+    P20(9) <= A(11) and B(9);
+    P21(9) <= A(12) and B(9);
+    P22(9) <= A(13) and B(9);
+    P23(9) <= A(14) and B(9);
+    P24(9) <= A(15) and B(9);
+
+    P10(10) <= A(0) and B(10);
+    P11(10) <= A(1) and B(10);
+    P12(10) <= A(2) and B(10);
+    P13(10) <= A(3) and B(10);
+    P14(10) <= A(4) and B(10);
+    P15(10) <= A(5) and B(10);
+    P16(10) <= A(6) and B(10);
+    P17(10) <= A(7) and B(10);
+    P18(10) <= A(8) and B(10);
+    P19(10) <= A(9) and B(10);
+    P20(10) <= A(10) and B(10);
+    P21(10) <= A(11) and B(10);
+    P22(10) <= A(12) and B(10);
+    P23(10) <= A(13) and B(10);
+    P24(10) <= A(14) and B(10);
+    P25(10) <= A(15) and B(10);
+
+    P11(11) <= A(0) and B(11);
+    P12(11) <= A(1) and B(11);
+    P13(11) <= A(2) and B(11);
+    P14(11) <= A(3) and B(11);
+    P15(11) <= A(4) and B(11);
+    P16(11) <= A(5) and B(11);
+    P17(11) <= A(6) and B(11);
+    P18(11) <= A(7) and B(11);
+    P19(11) <= A(8) and B(11);
+    P20(11) <= A(9) and B(11);
+    P21(11) <= A(10) and B(11);
+    P22(11) <= A(11) and B(11);
+    P23(11) <= A(12) and B(11);
+    P24(11) <= A(13) and B(11);
+    P25(11) <= A(14) and B(11);
+    P26(11) <= A(15) and B(11);
+
+    P12(12) <= A(0) and B(12);
+    P13(12) <= A(1) and B(12);
+    P14(12) <= A(2) and B(12);
+    P15(12) <= A(3) and B(12);
+    P16(12) <= A(4) and B(12);
+    P17(12) <= A(5) and B(12);
+    P18(12) <= A(6) and B(12);
+    P19(12) <= A(7) and B(12);
+    P20(12) <= A(8) and B(12);
+    P21(12) <= A(9) and B(12);
+    P22(12) <= A(10) and B(12);
+    P23(12) <= A(11) and B(12);
+    P24(12) <= A(12) and B(12);
+    P25(12) <= A(13) and B(12);
+    P26(12) <= A(14) and B(12);
+    P27(12) <= A(15) and B(12);
+
+    P13(13) <= A(0) and B(13);
+    P14(13) <= A(1) and B(13);
+    P15(13) <= A(2) and B(13);
+    P16(13) <= A(3) and B(13);
+    P17(13) <= A(4) and B(13);
+    P18(13) <= A(5) and B(13);
+    P19(13) <= A(6) and B(13);
+    P20(13) <= A(7) and B(13);
+    P21(13) <= A(8) and B(13);
+    P22(13) <= A(9) and B(13);
+    P23(13) <= A(10) and B(13);
+    P24(13) <= A(11) and B(13);
+    P25(13) <= A(12) and B(13);
+    P26(13) <= A(13) and B(13);
+    P27(13) <= A(14) and B(13);
+    P28(13) <= A(15) and B(13);
+
+    P14(14) <= A(0) and B(14);
+    P15(14) <= A(1) and B(14);
+    P16(14) <= A(2) and B(14);
+    P17(14) <= A(3) and B(14);
+    P18(14) <= A(4) and B(14);
+    P19(14) <= A(5) and B(14);
+    P20(14) <= A(6) and B(14);
+    P21(14) <= A(7) and B(14);
+    P22(14) <= A(8) and B(14);
+    P23(14) <= A(9) and B(14);
+    P24(14) <= A(10) and B(14);
+    P25(14) <= A(11) and B(14);
+    P26(14) <= A(12) and B(14);
+    P27(14) <= A(13) and B(14);
+    P28(14) <= A(14) and B(14);
+    P29(14) <= A(15) and B(14);
+
+    P15(15) <= A(0) and B(15);
+    P16(15) <= A(1) and B(15);
+    P17(15) <= A(2) and B(15);
+    P18(15) <= A(3) and B(15);
+    P19(15) <= A(4) and B(15);
+    P20(15) <= A(5) and B(15);
+    P21(15) <= A(6) and B(15);
+    P22(15) <= A(7) and B(15);
+    P23(15) <= A(8) and B(15);
+    P24(15) <= A(9) and B(15);
+    P25(15) <= A(10) and B(15);
+    P26(15) <= A(11) and B(15);
+    P27(15) <= A(12) and B(15);
+    P28(15) <= A(13) and B(15);
+    P29(15) <= A(14) and B(15);
+    P30(15) <= A(15) and B(15);
+
+    --POSN 0
+    S1(0) <= P0(0);
+    S2(0) <= C(0);
+
+    --POSN1
+    HA_1_1: HA port map(A=>P1(0),B=>P1(1),s=>S1(1),c=>C2(0));
+    S2(1) <= C(1);
+
+    
+    --POSN2
+    FA_2_1: FA port map(A=>P2(0),B=>P2(1),C=>C2(),S=>S1(2),Cout=>C3(1));
+    HA_2_1: HA port map(A=>P2(2),B=>C(2),S=>S2(2),C=>C3(2));
+
+    --POSN3
+    HA_3_1: HA port map(A=>P3(0),B=>P3(1),S=>TS3(1),C=>C4(1));
+    FA_3_1: FA port map(A=>P3(2),B=>P3(3),C=>C(3),S=>S1(3),Cout=>C4(2));
+    FA_3_2: FA port map(A=>C3(1),B=>C3(1),C=>TS3(1),S=>S2(3),Cout=>C4(3));
+
+    --POSN4
+    HA_4_1: HA port map(A=>P4(0),B=>P4(1),S=>TS4_1,C=>C5(1));
+    FA_4_1: FA port map(A=>TS4_1,B=>P4(2),C=>P4(3),S=>TS4_2,Cout=>C5(2));
+    FA_4_2: FA port map(A=>TS4_2,B=>P4(4),C=>C(4),S=>S1(4),Cout=>C5(3));
+    FA_4_3: FA port map(A=>C4(1),B=>C4(2),C=>C4(3),S=>S2(4),Cout=>C5(4));
+
+    
+    --POSN5
+    HA_5_1: HA port map(A=>P5(0),B=>P5(1),S=>TS5(1),C=>C6(1));
+    FA_5_1: FA port map(A=>TS5(1),B=>P5(2),C=>P5(3),S=>TS_2,Cout=>C6(2));    
+    FA_5_2: FA port map(A=>TS_2,B=>P5(4),C=>P5(5),S=>TS5(3),Cout=>C6(3));    
+    FA_5_3: FA port map(A=>TS5(3),B=>C(5),C=>C5(1),S=>S1(5),Cout=>C6(4));    
+    FA_5_4: FA port map(A=>C5(2),B=>C5(3),C=>C5(4),S=>S2(5),Cout=>C6(5));  
+    
+    --POSN6
+    FA_6_1: FA port map(A=>P5(0),B=>P5(1),C=>P5(2),S=>TS6(1),Cout=>C7(1));
+    FA_6_2: FA port map(A=>P5(3),B=>P5(4),C=>P5(5),S=>TS6(2),Cout=>C7(2));
+    FA_6_3: FA port map(A=>P5(6),B=>C(6),C=>C6(1),S=>TS6(3),Cout=>C7(3));
+    FA_6_4: FA port map(A=>TS6(1),B=>TS6(2),C=>TS6(3),S=>TS6(4),Cout=>C7(4));
+    FA_6_5: FA port map(A=>TS6(4),B=>C6(2),C=>C6(3),S=>S1(6),Cout=>C7(5));
+    HA_6_1: HA port map(A=>C6(4),B=>C6(5),S=>S2(6),C=>C7(6));
+
+    --POSN7
+    FA_7_1: FA port map(A=>P7(0),B=>P7(1),C=>P7(2),S=>TS7(1),Cout=>C8(1));
+    FA_7_2: FA port map(A=>P7(3),B=>P7(4),C=>P7(5),S=>TS7(2),Cout=>C8(2));
+    FA_7_3: FA port map(A=>P7(6),B=>P7(7),C=>C(7),S=>TS7(3),Cout=>C8(3));
+    FA_7_4: FA port map(A=>C7(1),B=>C7(2),C=>C7(3),S=>TS7(4),Cout=>C8(4));
+    FA_7_5: FA port map(A=>C7(4),B=>C7(5),C=>C7(6),S=>TS7(5),Cout=>C8(5));
+    FA_7_6: FA port map(A=>TS7(1),B=>TS7(2),C=>TS7(3),S=>S1(7),Cout=>C8(6));
+    HA_7_1: HA port map(A=>TS7(4),B=>TS7(5),S=>S2(7),C=>C8(7));
+
+   
+    --POSN8
+    FA_8_1: FA port map(A=>P8(0),B=>P8(1),C=>P8(2),S=>TS8(1),Cout=>C9(1));
+    FA_8_2: FA port map(A=>P8(3),B=>P8(4),C=>P8(5),S=>TS8(2),Cout=>C9(2));
+    FA_8_3: FA port map(A=>P8(6),B=>P8(7),C=>P8(8),S=>TS8(3),Cout=>C9(3));
+    FA_8_4: FA port map(A=>C8(1),B=>C8(1),C=>C8(1),S=>TS8(4),Cout=>C9(4));
+    FA_8_5: FA port map(A=>C8(1),B=>C8(1),C=>C(8),S=>TS8(5),Cout=>C9(5));
+    FA_8_6: FA port map(A=>TS8(1),B=>TS8(2),C=>TS8(3),S=>S1(8),Cout=>C9(6));
+    FA_8_7: FA port map(A=>TS8(4),B=>TS8(5),C=>TS8(6),S=>S2(8),Cout=>C9(7));  
+    HA_8_1: HA port map(A=>C8(1),B=>C8(1),S=>TS8(6),C=>C9(8));
+
+    --POSN9
+    FA_9_1: FA port map(A=>P9(0),B=>P9(1),C=>P9(2),S=>TS9(1),Cout=>C10(1));
+    FA_9_1: FA port map(A=>P9(3),B=>P9(4),C=>P9(5),S=>TS9(2),Cout=>C10(2));
+    FA_9_1: FA port map(A=>P9(6),B=>P9(7),C=>P9(8),S=>TS9(3),Cout=>C10(3));
+    FA_9_1: FA port map(A=>C9(1),B=>C9(2),C=>C9(3),S=>TS9(4),Cout=>C10(4));   
+    FA_9_1: FA port map(A=>C9(4),B=>C9(5),C=>C9(6),S=>TS9(5),Cout=>C10(5));
+    FA_9_1: FA port map(A=>TS9(1),B=>TS9(2),C=>TS9(3),S=>TS9(7),Cout=>C10(6));
+    FA_9_1: FA port map(A=>C(9),B=>TS9(4),C=>TS9(5),S=>S1(9),Cout=>C10(7));
+    FA_9_1: FA port map(A=>P9(9),B=>TS9(6),C=>TS9(7),S=>S2(9),Cout=>C10(8)); 
+    HA_8_1: HA port map(A=>C9(7),B=>C9(8),S=>TS9(6),C=>C10(9));
+    
+    --POSN10
+    FA_10_1: FA port map(A=>P10(0),B=>P10(1),C=>P10(2),S=>TS10(1),Cout=>C11(1));
+    FA_10_2: FA port map(A=>P10(3),B=>P10(4),C=>P10(5),S=>TS10(2),Cout=>C11(2));
+    FA_10_3: FA port map(A=>P10(6),B=>P10(7),C=>P10(8),S=>TS10(3),Cout=>C11(3));
+    FA_10_4: FA port map(A=>P10(9),B=>P10(10),C=>C(10),S=>TS10(4),Cout=>C11(4));
+    FA_10_5: FA port map(A=>TS10(1),B=>TS10(2),C=>TS10(3),S=>TS10(5),Cout=>C11(5));
+    FA_10_6: FA port map(A=>C10(1),B=>C10(1),C=>C10(1),S=>TS10(6),Cout=>C11(6));
+    FA_10_7: FA port map(A=>C10(1),B=>C10(1),C=>C10(1),S=>TS10(7),Cout=>C11(7));    
+    FA_10_8: FA port map(A=>C10(1),B=>C10(1),C=>C10(1),S=>TS10(8),Cout=>C11(8));
+    FA_10_9: FA port map(A=>TS10(4),B=>TS10(5),C=>TS10(6),S=>S1(10),Cout=>C11(9));
+    HA_10_1: HA port map(A=>TS10(7),B=>TS10(8),S=>S2(10),C=>C11(10));
+
+    --POSN11
+    FA_11_1: FA port map(A=>P11(0),B=>P11(0),C=>P11(0),S=>TS11(1),Cout=>C12(1));
+    FA_11_2: FA port map(A=>P11(0),B=>P11(0),C=>P11(0),S=>TS11(2),Cout=>C12(2));
+    FA_11_3: FA port map(A=>P11(0),B=>P11(0),C=>P11(0),S=>TS11(3),Cout=>C12(3));
+    FA_11_4: FA port map(A=>P11(0),B=>P11(0),C=>P11(0),S=>TS11(5),Cout=>C12(4));
+    FA_11_5: FA port map(A=>TS11(1),B=>TS11(2),C=>TS11(3),S=>TS11(4),Cout=>C12(5));
+    FA_11_6: FA port map(A=>C11(1),B=>C11(2),C=>C11(3),S=>TS11(6),Cout=>C12(6));
+    FA_11_7: FA port map(A=>C11(4),B=>C11(5),C=>C11(6),S=>TS11(7),Cout=>C12(7));
+    FA_11_8: FA port map(A=>C11(7),B=>C11(8),C=>C11(9),S=>TS11(8),Cout=>C12(8));
+    FA_11_9: FA port map(A=>TS11(6),B=>TS11(7),C=>TS11(8),S=>TS11(9),Cout=>C12(9));
+    FA_11_10: FA port map(A=>C(11),B=>TS11(9),C=>C11(10),S=>S1(11),Cout=>C12(10));
+    HA_10_1: HA port map(A=>TS11(4),B=>TS11(5),S=>S2(11),C=>C12(11));
+
+    --POSN12
+    FA_11_1: FA port map(A=>P12(0),B=>P12(1),C=>P12(2),S=>TS12(1),Cout=>C13(1)); 
+    FA_11_2: FA port map(A=>P12(3),B=>P12(4),C=>P12(5),S=>TS12(2),Cout=>C13(2)); 
+    FA_11_3: FA port map(A=>P12(6),B=>P12(7),C=>P12(8),S=>TS12(3),Cout=>C13(3)); 
+    FA_11_4: FA port map(A=>P12(9),B=>P12(10),C=>P12(11),S=>TS12(4),Cout=>C13(4)); 
+    FA_11_5: FA port map(A=>TS12(1),B=>TS12(2),C=>TS12(3),S=>TS12(5),Cout=>C13(5)); 
+    FA_11_6: FA port map(A=>P12(12),B=>TS12(4),C=>TS12(5),S=>S1(12),Cout=>C13(6)); 
+    FA_11_7: FA port map(A=>C12(1),B=>C12(2),C=>C12(3),S=>TS12(6),Cout=>C13(7)); 
+    FA_11_8: FA port map(A=>C12(4),B=>C12(5),C=>C12(6),S=>TS12(7),Cout=>C13(8)); 
+    FA_11_9: FA port map(A=>C12(7),B=>C12(8),C=>C12(9),S=>TS12(8),Cout=>C13(9)); 
+    FA_11_10: FA port map(A=>TS12(6),B=>TS12(7),C=>TS12(8),S=>TS12(9),Cout=>C13(10)); 
+    FA_11_11: FA port map(A=>C(12),B=>C12(10),C=>C12(11),S=>,Cout=>C13(11)); 
+    HA_11_1: HA port map(A=>TS12(9),B=>TS12(10),S=>S2(12),C=>C13(12));
+
+
+end behav;

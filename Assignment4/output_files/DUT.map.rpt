@@ -1,0 +1,682 @@
+Analysis & Synthesis report for DUT
+Thu Nov 02 23:06:46 2023
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "main:add_instance|xorgate:SUM0"
+ 10. Port Connectivity Checks: "main:add_instance|abcgate:C_32"
+ 11. Port Connectivity Checks: "main:add_instance|abcgate:C_16"
+ 12. Port Connectivity Checks: "main:add_instance|abcgate:C_8"
+ 13. Port Connectivity Checks: "main:add_instance|abcgate:C_4"
+ 14. Port Connectivity Checks: "main:add_instance|abcgate:C_2"
+ 15. Port Connectivity Checks: "main:add_instance|abcgate:C_0"
+ 16. Port Connectivity Checks: "main:add_instance|Cin_map_G:T1_and1"
+ 17. Port Connectivity Checks: "main:add_instance|FA:FA_16_13"
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Nov 02 23:06:46 2023       ;
+; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name               ; DUT                                         ;
+; Top-level Entity Name       ; DUT                                         ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 741                                         ;
+; Total pins                  ; 97                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                            ; DUT                ; DUT                ;
+; Family name                                                      ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                           ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+---------+
+; ../Gates.vhdl                    ; yes             ; User VHDL File  ; D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl   ;         ;
+; ../dadda.vhdl                    ; yes             ; User VHDL File  ; D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/dadda.vhdl   ;         ;
+; DUT.vhd                          ; yes             ; User VHDL File  ; D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/ASS4/DUT.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                    ;
++---------------------------------------------+------------------+
+; Resource                                    ; Usage            ;
++---------------------------------------------+------------------+
+; Total logic elements                        ; 741              ;
+;     -- Combinational with no register       ; 741              ;
+;     -- Register only                        ; 0                ;
+;     -- Combinational with a register        ; 0                ;
+;                                             ;                  ;
+; Logic element usage by number of LUT inputs ;                  ;
+;     -- 4 input functions                    ; 432              ;
+;     -- 3 input functions                    ; 121              ;
+;     -- 2 input functions                    ; 188              ;
+;     -- 1 input functions                    ; 0                ;
+;     -- 0 input functions                    ; 0                ;
+;                                             ;                  ;
+; Logic elements by mode                      ;                  ;
+;     -- normal mode                          ; 741              ;
+;     -- arithmetic mode                      ; 0                ;
+;     -- qfbk mode                            ; 0                ;
+;     -- register cascade mode                ; 0                ;
+;     -- synchronous clear/load mode          ; 0                ;
+;     -- asynchronous clear/load mode         ; 0                ;
+;                                             ;                  ;
+; Total registers                             ; 0                ;
+; I/O pins                                    ; 97               ;
+; Maximum fan-out node                        ; input_vector[33] ;
+; Maximum fan-out                             ; 33               ;
+; Total fan-out                               ; 2500             ;
+; Average fan-out                             ; 2.98             ;
++---------------------------------------------+------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                    ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                     ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------+-------------+--------------+
+; |DUT                       ; 741 (0)     ; 0            ; 0          ; 97   ; 0            ; 741 (0)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT                                    ; DUT         ; work         ;
+;    |main:add_instance|     ; 741 (160)   ; 0            ; 0          ; 0    ; 0            ; 741 (160)    ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance                  ; main        ; work         ;
+;       |FA:FA_10_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_10_1       ; FA          ; work         ;
+;       |FA:FA_10_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_10_2       ; FA          ; work         ;
+;       |FA:FA_10_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_10_3       ; FA          ; work         ;
+;       |FA:FA_10_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_10_4       ; FA          ; work         ;
+;       |FA:FA_10_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_10_5       ; FA          ; work         ;
+;       |FA:FA_10_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_10_6       ; FA          ; work         ;
+;       |FA:FA_10_7|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_10_7       ; FA          ; work         ;
+;       |FA:FA_10_8|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_10_8       ; FA          ; work         ;
+;       |FA:FA_10_9|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_10_9       ; FA          ; work         ;
+;       |FA:FA_11_10|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_11_10      ; FA          ; work         ;
+;       |FA:FA_11_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_11_1       ; FA          ; work         ;
+;       |FA:FA_11_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_11_2       ; FA          ; work         ;
+;       |FA:FA_11_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_11_3       ; FA          ; work         ;
+;       |FA:FA_11_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_11_4       ; FA          ; work         ;
+;       |FA:FA_11_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_11_5       ; FA          ; work         ;
+;       |FA:FA_11_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_11_6       ; FA          ; work         ;
+;       |FA:FA_11_7|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_11_7       ; FA          ; work         ;
+;       |FA:FA_11_8|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_11_8       ; FA          ; work         ;
+;       |FA:FA_11_9|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_11_9       ; FA          ; work         ;
+;       |FA:FA_12_10|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_12_10      ; FA          ; work         ;
+;       |FA:FA_12_11|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_12_11      ; FA          ; work         ;
+;       |FA:FA_12_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_12_1       ; FA          ; work         ;
+;       |FA:FA_12_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_12_2       ; FA          ; work         ;
+;       |FA:FA_12_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_12_3       ; FA          ; work         ;
+;       |FA:FA_12_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_12_4       ; FA          ; work         ;
+;       |FA:FA_12_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_12_5       ; FA          ; work         ;
+;       |FA:FA_12_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_12_6       ; FA          ; work         ;
+;       |FA:FA_12_7|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_12_7       ; FA          ; work         ;
+;       |FA:FA_12_8|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_12_8       ; FA          ; work         ;
+;       |FA:FA_12_9|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_12_9       ; FA          ; work         ;
+;       |FA:FA_13_10|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_13_10      ; FA          ; work         ;
+;       |FA:FA_13_11|        ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_13_11      ; FA          ; work         ;
+;       |FA:FA_13_12|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_13_12      ; FA          ; work         ;
+;       |FA:FA_13_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_13_1       ; FA          ; work         ;
+;       |FA:FA_13_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_13_2       ; FA          ; work         ;
+;       |FA:FA_13_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_13_3       ; FA          ; work         ;
+;       |FA:FA_13_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_13_4       ; FA          ; work         ;
+;       |FA:FA_13_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_13_5       ; FA          ; work         ;
+;       |FA:FA_13_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_13_6       ; FA          ; work         ;
+;       |FA:FA_13_7|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_13_7       ; FA          ; work         ;
+;       |FA:FA_13_8|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_13_8       ; FA          ; work         ;
+;       |FA:FA_13_9|         ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_13_9       ; FA          ; work         ;
+;       |FA:FA_14_10|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_14_10      ; FA          ; work         ;
+;       |FA:FA_14_11|        ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_14_11      ; FA          ; work         ;
+;       |FA:FA_14_12|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_14_12      ; FA          ; work         ;
+;       |FA:FA_14_13|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_14_13      ; FA          ; work         ;
+;       |FA:FA_14_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_14_1       ; FA          ; work         ;
+;       |FA:FA_14_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_14_2       ; FA          ; work         ;
+;       |FA:FA_14_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_14_3       ; FA          ; work         ;
+;       |FA:FA_14_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_14_4       ; FA          ; work         ;
+;       |FA:FA_14_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_14_5       ; FA          ; work         ;
+;       |FA:FA_14_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_14_6       ; FA          ; work         ;
+;       |FA:FA_14_7|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_14_7       ; FA          ; work         ;
+;       |FA:FA_14_8|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_14_8       ; FA          ; work         ;
+;       |FA:FA_14_9|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_14_9       ; FA          ; work         ;
+;       |FA:FA_15_10|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_15_10      ; FA          ; work         ;
+;       |FA:FA_15_11|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_15_11      ; FA          ; work         ;
+;       |FA:FA_15_12|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_15_12      ; FA          ; work         ;
+;       |FA:FA_15_13|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_15_13      ; FA          ; work         ;
+;       |FA:FA_15_14|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_15_14      ; FA          ; work         ;
+;       |FA:FA_15_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_15_1       ; FA          ; work         ;
+;       |FA:FA_15_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_15_2       ; FA          ; work         ;
+;       |FA:FA_15_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_15_3       ; FA          ; work         ;
+;       |FA:FA_15_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_15_4       ; FA          ; work         ;
+;       |FA:FA_15_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_15_5       ; FA          ; work         ;
+;       |FA:FA_15_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_15_6       ; FA          ; work         ;
+;       |FA:FA_15_7|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_15_7       ; FA          ; work         ;
+;       |FA:FA_15_8|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_15_8       ; FA          ; work         ;
+;       |FA:FA_15_9|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_15_9       ; FA          ; work         ;
+;       |FA:FA_16_10|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_16_10      ; FA          ; work         ;
+;       |FA:FA_16_11|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_16_11      ; FA          ; work         ;
+;       |FA:FA_16_12|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_16_12      ; FA          ; work         ;
+;       |FA:FA_16_13|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_16_13      ; FA          ; work         ;
+;       |FA:FA_16_14|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_16_14      ; FA          ; work         ;
+;       |FA:FA_16_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_16_1       ; FA          ; work         ;
+;       |FA:FA_16_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_16_2       ; FA          ; work         ;
+;       |FA:FA_16_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_16_3       ; FA          ; work         ;
+;       |FA:FA_16_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_16_4       ; FA          ; work         ;
+;       |FA:FA_16_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_16_5       ; FA          ; work         ;
+;       |FA:FA_16_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_16_6       ; FA          ; work         ;
+;       |FA:FA_16_7|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_16_7       ; FA          ; work         ;
+;       |FA:FA_16_8|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_16_8       ; FA          ; work         ;
+;       |FA:FA_16_9|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_16_9       ; FA          ; work         ;
+;       |FA:FA_17_10|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_17_10      ; FA          ; work         ;
+;       |FA:FA_17_11|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_17_11      ; FA          ; work         ;
+;       |FA:FA_17_12|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_17_12      ; FA          ; work         ;
+;       |FA:FA_17_13|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_17_13      ; FA          ; work         ;
+;       |FA:FA_17_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_17_1       ; FA          ; work         ;
+;       |FA:FA_17_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_17_2       ; FA          ; work         ;
+;       |FA:FA_17_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_17_3       ; FA          ; work         ;
+;       |FA:FA_17_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_17_4       ; FA          ; work         ;
+;       |FA:FA_17_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_17_5       ; FA          ; work         ;
+;       |FA:FA_17_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_17_6       ; FA          ; work         ;
+;       |FA:FA_17_7|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_17_7       ; FA          ; work         ;
+;       |FA:FA_17_8|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_17_8       ; FA          ; work         ;
+;       |FA:FA_17_9|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_17_9       ; FA          ; work         ;
+;       |FA:FA_18_10|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_18_10      ; FA          ; work         ;
+;       |FA:FA_18_11|        ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_18_11      ; FA          ; work         ;
+;       |FA:FA_18_12|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_18_12      ; FA          ; work         ;
+;       |FA:FA_18_13|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_18_13      ; FA          ; work         ;
+;       |FA:FA_18_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_18_1       ; FA          ; work         ;
+;       |FA:FA_18_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_18_2       ; FA          ; work         ;
+;       |FA:FA_18_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_18_3       ; FA          ; work         ;
+;       |FA:FA_18_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_18_4       ; FA          ; work         ;
+;       |FA:FA_18_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_18_5       ; FA          ; work         ;
+;       |FA:FA_18_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_18_6       ; FA          ; work         ;
+;       |FA:FA_18_7|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_18_7       ; FA          ; work         ;
+;       |FA:FA_18_8|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_18_8       ; FA          ; work         ;
+;       |FA:FA_18_9|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_18_9       ; FA          ; work         ;
+;       |FA:FA_19_10|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_19_10      ; FA          ; work         ;
+;       |FA:FA_19_11|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_19_11      ; FA          ; work         ;
+;       |FA:FA_19_12|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_19_12      ; FA          ; work         ;
+;       |FA:FA_19_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_19_1       ; FA          ; work         ;
+;       |FA:FA_19_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_19_2       ; FA          ; work         ;
+;       |FA:FA_19_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_19_3       ; FA          ; work         ;
+;       |FA:FA_19_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_19_4       ; FA          ; work         ;
+;       |FA:FA_19_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_19_5       ; FA          ; work         ;
+;       |FA:FA_19_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_19_6       ; FA          ; work         ;
+;       |FA:FA_19_7|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_19_7       ; FA          ; work         ;
+;       |FA:FA_19_8|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_19_8       ; FA          ; work         ;
+;       |FA:FA_19_9|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_19_9       ; FA          ; work         ;
+;       |FA:FA_20_10|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_20_10      ; FA          ; work         ;
+;       |FA:FA_20_11|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_20_11      ; FA          ; work         ;
+;       |FA:FA_20_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_20_1       ; FA          ; work         ;
+;       |FA:FA_20_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_20_2       ; FA          ; work         ;
+;       |FA:FA_20_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_20_3       ; FA          ; work         ;
+;       |FA:FA_20_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_20_4       ; FA          ; work         ;
+;       |FA:FA_20_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_20_5       ; FA          ; work         ;
+;       |FA:FA_20_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_20_6       ; FA          ; work         ;
+;       |FA:FA_20_7|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_20_7       ; FA          ; work         ;
+;       |FA:FA_20_8|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_20_8       ; FA          ; work         ;
+;       |FA:FA_20_9|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_20_9       ; FA          ; work         ;
+;       |FA:FA_21_10|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_21_10      ; FA          ; work         ;
+;       |FA:FA_21_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_21_1       ; FA          ; work         ;
+;       |FA:FA_21_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_21_2       ; FA          ; work         ;
+;       |FA:FA_21_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_21_3       ; FA          ; work         ;
+;       |FA:FA_21_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_21_4       ; FA          ; work         ;
+;       |FA:FA_21_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_21_5       ; FA          ; work         ;
+;       |FA:FA_21_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_21_6       ; FA          ; work         ;
+;       |FA:FA_21_7|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_21_7       ; FA          ; work         ;
+;       |FA:FA_21_8|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_21_8       ; FA          ; work         ;
+;       |FA:FA_21_9|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_21_9       ; FA          ; work         ;
+;       |FA:FA_22_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_22_1       ; FA          ; work         ;
+;       |FA:FA_22_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_22_2       ; FA          ; work         ;
+;       |FA:FA_22_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_22_3       ; FA          ; work         ;
+;       |FA:FA_22_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_22_4       ; FA          ; work         ;
+;       |FA:FA_22_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_22_5       ; FA          ; work         ;
+;       |FA:FA_22_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_22_6       ; FA          ; work         ;
+;       |FA:FA_22_7|         ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_22_7       ; FA          ; work         ;
+;       |FA:FA_22_8|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_22_8       ; FA          ; work         ;
+;       |FA:FA_22_9|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_22_9       ; FA          ; work         ;
+;       |FA:FA_23_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_23_1       ; FA          ; work         ;
+;       |FA:FA_23_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_23_2       ; FA          ; work         ;
+;       |FA:FA_23_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_23_3       ; FA          ; work         ;
+;       |FA:FA_23_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_23_4       ; FA          ; work         ;
+;       |FA:FA_23_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_23_5       ; FA          ; work         ;
+;       |FA:FA_23_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_23_6       ; FA          ; work         ;
+;       |FA:FA_23_7|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_23_7       ; FA          ; work         ;
+;       |FA:FA_23_8|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_23_8       ; FA          ; work         ;
+;       |FA:FA_24_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_24_1       ; FA          ; work         ;
+;       |FA:FA_24_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_24_2       ; FA          ; work         ;
+;       |FA:FA_24_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_24_3       ; FA          ; work         ;
+;       |FA:FA_24_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_24_4       ; FA          ; work         ;
+;       |FA:FA_24_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_24_5       ; FA          ; work         ;
+;       |FA:FA_24_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_24_6       ; FA          ; work         ;
+;       |FA:FA_24_7|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_24_7       ; FA          ; work         ;
+;       |FA:FA_25_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_25_1       ; FA          ; work         ;
+;       |FA:FA_25_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_25_2       ; FA          ; work         ;
+;       |FA:FA_25_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_25_3       ; FA          ; work         ;
+;       |FA:FA_25_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_25_4       ; FA          ; work         ;
+;       |FA:FA_25_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_25_5       ; FA          ; work         ;
+;       |FA:FA_25_6|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_25_6       ; FA          ; work         ;
+;       |FA:FA_26_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_26_1       ; FA          ; work         ;
+;       |FA:FA_26_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_26_2       ; FA          ; work         ;
+;       |FA:FA_26_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_26_3       ; FA          ; work         ;
+;       |FA:FA_26_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_26_4       ; FA          ; work         ;
+;       |FA:FA_26_5|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_26_5       ; FA          ; work         ;
+;       |FA:FA_27_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_27_1       ; FA          ; work         ;
+;       |FA:FA_27_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_27_2       ; FA          ; work         ;
+;       |FA:FA_27_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_27_3       ; FA          ; work         ;
+;       |FA:FA_27_4|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_27_4       ; FA          ; work         ;
+;       |FA:FA_28_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_28_1       ; FA          ; work         ;
+;       |FA:FA_28_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_28_2       ; FA          ; work         ;
+;       |FA:FA_28_3|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_28_3       ; FA          ; work         ;
+;       |FA:FA_29_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_29_1       ; FA          ; work         ;
+;       |FA:FA_29_2|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_29_2       ; FA          ; work         ;
+;       |FA:FA_2_1|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_2_1        ; FA          ; work         ;
+;       |FA:FA_30_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_30_1       ; FA          ; work         ;
+;       |FA:FA_3_1|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_3_1        ; FA          ; work         ;
+;       |FA:FA_3_2|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_3_2        ; FA          ; work         ;
+;       |FA:FA_4_1|          ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_4_1        ; FA          ; work         ;
+;       |FA:FA_4_2|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_4_2        ; FA          ; work         ;
+;       |FA:FA_4_3|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_4_3        ; FA          ; work         ;
+;       |FA:FA_5_1|          ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_5_1        ; FA          ; work         ;
+;       |FA:FA_5_2|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_5_2        ; FA          ; work         ;
+;       |FA:FA_5_3|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_5_3        ; FA          ; work         ;
+;       |FA:FA_5_4|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_5_4        ; FA          ; work         ;
+;       |FA:FA_6_1|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_6_1        ; FA          ; work         ;
+;       |FA:FA_6_2|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_6_2        ; FA          ; work         ;
+;       |FA:FA_6_3|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_6_3        ; FA          ; work         ;
+;       |FA:FA_6_4|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_6_4        ; FA          ; work         ;
+;       |FA:FA_6_5|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_6_5        ; FA          ; work         ;
+;       |FA:FA_7_1|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_7_1        ; FA          ; work         ;
+;       |FA:FA_7_2|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_7_2        ; FA          ; work         ;
+;       |FA:FA_7_3|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_7_3        ; FA          ; work         ;
+;       |FA:FA_7_4|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_7_4        ; FA          ; work         ;
+;       |FA:FA_7_5|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_7_5        ; FA          ; work         ;
+;       |FA:FA_7_6|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_7_6        ; FA          ; work         ;
+;       |FA:FA_8_1|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_8_1        ; FA          ; work         ;
+;       |FA:FA_8_2|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_8_2        ; FA          ; work         ;
+;       |FA:FA_8_3|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_8_3        ; FA          ; work         ;
+;       |FA:FA_8_4|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_8_4        ; FA          ; work         ;
+;       |FA:FA_8_5|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_8_5        ; FA          ; work         ;
+;       |FA:FA_8_6|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_8_6        ; FA          ; work         ;
+;       |FA:FA_8_7|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_8_7        ; FA          ; work         ;
+;       |FA:FA_9_1|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_9_1        ; FA          ; work         ;
+;       |FA:FA_9_2|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_9_2        ; FA          ; work         ;
+;       |FA:FA_9_3|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_9_3        ; FA          ; work         ;
+;       |FA:FA_9_4|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_9_4        ; FA          ; work         ;
+;       |FA:FA_9_5|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_9_5        ; FA          ; work         ;
+;       |FA:FA_9_6|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_9_6        ; FA          ; work         ;
+;       |FA:FA_9_7|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_9_7        ; FA          ; work         ;
+;       |FA:FA_9_8|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|FA:FA_9_8        ; FA          ; work         ;
+;       |HA:HA_10_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_10_1       ; HA          ; work         ;
+;       |HA:HA_11_1|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_11_1       ; HA          ; work         ;
+;       |HA:HA_12_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_12_1       ; HA          ; work         ;
+;       |HA:HA_13_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_13_1       ; HA          ; work         ;
+;       |HA:HA_14_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_14_1       ; HA          ; work         ;
+;       |HA:HA_15_1|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_15_1       ; HA          ; work         ;
+;       |HA:HA_17_1|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_17_1       ; HA          ; work         ;
+;       |HA:HA_1_1|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_1_1        ; HA          ; work         ;
+;       |HA:HA_2_1|          ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_2_1        ; HA          ; work         ;
+;       |HA:HA_3_1|          ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_3_1        ; HA          ; work         ;
+;       |HA:HA_4_1|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_4_1        ; HA          ; work         ;
+;       |HA:HA_5_1|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_5_1        ; HA          ; work         ;
+;       |HA:HA_6_1|          ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_6_1        ; HA          ; work         ;
+;       |HA:HA_7_1|          ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_7_1        ; HA          ; work         ;
+;       |HA:HA_8_1|          ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|HA:HA_8_1        ; HA          ; work         ;
+;       |abcgate:C_10|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_10     ; abcgate     ; work         ;
+;       |abcgate:C_11|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_11     ; abcgate     ; work         ;
+;       |abcgate:C_12|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_12     ; abcgate     ; work         ;
+;       |abcgate:C_13|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_13     ; abcgate     ; work         ;
+;       |abcgate:C_14|       ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_14     ; abcgate     ; work         ;
+;       |abcgate:C_15|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_15     ; abcgate     ; work         ;
+;       |abcgate:C_17|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_17     ; abcgate     ; work         ;
+;       |abcgate:C_18|       ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_18     ; abcgate     ; work         ;
+;       |abcgate:C_19|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_19     ; abcgate     ; work         ;
+;       |abcgate:C_20|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_20     ; abcgate     ; work         ;
+;       |abcgate:C_21|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_21     ; abcgate     ; work         ;
+;       |abcgate:C_22|       ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_22     ; abcgate     ; work         ;
+;       |abcgate:C_23|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_23     ; abcgate     ; work         ;
+;       |abcgate:C_24|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_24     ; abcgate     ; work         ;
+;       |abcgate:C_25|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_25     ; abcgate     ; work         ;
+;       |abcgate:C_26|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_26     ; abcgate     ; work         ;
+;       |abcgate:C_27|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_27     ; abcgate     ; work         ;
+;       |abcgate:C_28|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_28     ; abcgate     ; work         ;
+;       |abcgate:C_29|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_29     ; abcgate     ; work         ;
+;       |abcgate:C_31|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_31     ; abcgate     ; work         ;
+;       |abcgate:C_3|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_3      ; abcgate     ; work         ;
+;       |abcgate:C_5|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_5      ; abcgate     ; work         ;
+;       |abcgate:C_6|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_6      ; abcgate     ; work         ;
+;       |abcgate:C_7|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_7      ; abcgate     ; work         ;
+;       |abcgate:C_9|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:C_9      ; abcgate     ; work         ;
+;       |abcgate:T2_abc11|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc11 ; abcgate     ; work         ;
+;       |abcgate:T2_abc13|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc13 ; abcgate     ; work         ;
+;       |abcgate:T2_abc15|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc15 ; abcgate     ; work         ;
+;       |abcgate:T2_abc17|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc17 ; abcgate     ; work         ;
+;       |abcgate:T2_abc19|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc19 ; abcgate     ; work         ;
+;       |abcgate:T2_abc1|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc1  ; abcgate     ; work         ;
+;       |abcgate:T2_abc21|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc21 ; abcgate     ; work         ;
+;       |abcgate:T2_abc23|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc23 ; abcgate     ; work         ;
+;       |abcgate:T2_abc25|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc25 ; abcgate     ; work         ;
+;       |abcgate:T2_abc27|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc27 ; abcgate     ; work         ;
+;       |abcgate:T2_abc29|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc29 ; abcgate     ; work         ;
+;       |abcgate:T2_abc3|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc3  ; abcgate     ; work         ;
+;       |abcgate:T2_abc5|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc5  ; abcgate     ; work         ;
+;       |abcgate:T2_abc7|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc7  ; abcgate     ; work         ;
+;       |abcgate:T2_abc9|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T2_abc9  ; abcgate     ; work         ;
+;       |abcgate:T3_abc1|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T3_abc1  ; abcgate     ; work         ;
+;       |abcgate:T3_abc2|    ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T3_abc2  ; abcgate     ; work         ;
+;       |abcgate:T3_abc3|    ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T3_abc3  ; abcgate     ; work         ;
+;       |abcgate:T3_abc5|    ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T3_abc5  ; abcgate     ; work         ;
+;       |abcgate:T3_abc7|    ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T3_abc7  ; abcgate     ; work         ;
+;       |abcgate:T4_abc1|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T4_abc1  ; abcgate     ; work         ;
+;       |abcgate:T4_abc2|    ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T4_abc2  ; abcgate     ; work         ;
+;       |abcgate:T4_abc3|    ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T4_abc3  ; abcgate     ; work         ;
+;       |abcgate:T5_abc1|    ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T5_abc1  ; abcgate     ; work         ;
+;       |abcgate:T6_abc1|    ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|abcgate:T6_abc1  ; abcgate     ; work         ;
+;       |xorgate:SUM10|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM10    ; xorgate     ; work         ;
+;       |xorgate:SUM11|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM11    ; xorgate     ; work         ;
+;       |xorgate:SUM12|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM12    ; xorgate     ; work         ;
+;       |xorgate:SUM13|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM13    ; xorgate     ; work         ;
+;       |xorgate:SUM14|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM14    ; xorgate     ; work         ;
+;       |xorgate:SUM15|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM15    ; xorgate     ; work         ;
+;       |xorgate:SUM16|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM16    ; xorgate     ; work         ;
+;       |xorgate:SUM17|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM17    ; xorgate     ; work         ;
+;       |xorgate:SUM18|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM18    ; xorgate     ; work         ;
+;       |xorgate:SUM19|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM19    ; xorgate     ; work         ;
+;       |xorgate:SUM1|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM1     ; xorgate     ; work         ;
+;       |xorgate:SUM20|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM20    ; xorgate     ; work         ;
+;       |xorgate:SUM21|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM21    ; xorgate     ; work         ;
+;       |xorgate:SUM22|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM22    ; xorgate     ; work         ;
+;       |xorgate:SUM23|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM23    ; xorgate     ; work         ;
+;       |xorgate:SUM24|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM24    ; xorgate     ; work         ;
+;       |xorgate:SUM25|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM25    ; xorgate     ; work         ;
+;       |xorgate:SUM26|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM26    ; xorgate     ; work         ;
+;       |xorgate:SUM27|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM27    ; xorgate     ; work         ;
+;       |xorgate:SUM28|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM28    ; xorgate     ; work         ;
+;       |xorgate:SUM29|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM29    ; xorgate     ; work         ;
+;       |xorgate:SUM2|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM2     ; xorgate     ; work         ;
+;       |xorgate:SUM30|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM30    ; xorgate     ; work         ;
+;       |xorgate:SUM31|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM31    ; xorgate     ; work         ;
+;       |xorgate:SUM3|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM3     ; xorgate     ; work         ;
+;       |xorgate:SUM4|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM4     ; xorgate     ; work         ;
+;       |xorgate:SUM5|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM5     ; xorgate     ; work         ;
+;       |xorgate:SUM6|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM6     ; xorgate     ; work         ;
+;       |xorgate:SUM7|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM7     ; xorgate     ; work         ;
+;       |xorgate:SUM8|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM8     ; xorgate     ; work         ;
+;       |xorgate:SUM9|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:SUM9     ; xorgate     ; work         ;
+;       |xorgate:T1_xor10|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:T1_xor10 ; xorgate     ; work         ;
+;       |xorgate:T1_xor1|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:T1_xor1  ; xorgate     ; work         ;
+;       |xorgate:T1_xor25|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:T1_xor25 ; xorgate     ; work         ;
+;       |xorgate:T1_xor26|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:T1_xor26 ; xorgate     ; work         ;
+;       |xorgate:T1_xor29|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:T1_xor29 ; xorgate     ; work         ;
+;       |xorgate:T1_xor30|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:T1_xor30 ; xorgate     ; work         ;
+;       |xorgate:T1_xor3|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:T1_xor3  ; xorgate     ; work         ;
+;       |xorgate:T1_xor9|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT|main:add_instance|xorgate:T1_xor9  ; xorgate     ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "main:add_instance|xorgate:SUM0" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                     ;
++------+-------+----------+----------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "main:add_instance|abcgate:C_32" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                     ;
++------+-------+----------+----------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "main:add_instance|abcgate:C_16" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                     ;
++------+-------+----------+----------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "main:add_instance|abcgate:C_8" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "main:add_instance|abcgate:C_4" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "main:add_instance|abcgate:C_2" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "main:add_instance|abcgate:C_0" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "main:add_instance|Cin_map_G:T1_and1" ;
++------+-------+----------+---------------------------------------+
+; Port ; Type  ; Severity ; Details                               ;
++------+-------+----------+---------------------------------------+
+; cin  ; Input ; Info     ; Stuck at GND                          ;
++------+-------+----------+---------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "main:add_instance|FA:FA_16_13"                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; s    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Thu Nov 02 23:06:36 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dadda -c DUT
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 13 design units, including 6 entities, in source file /work_files/books_and_study_files/engineering/electrical/ee671_vlsi_design/assignment 4/gates.vhdl
+    Info (12022): Found design unit 1: Gates File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl Line: 5
+    Info (12022): Found design unit 2: andgate-trivial File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl Line: 46
+    Info (12022): Found design unit 3: xorgate-trivial File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl Line: 58
+    Info (12022): Found design unit 4: abcgate-trivial File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl Line: 70
+    Info (12022): Found design unit 5: Cin_map_G-trivial File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl Line: 85
+    Info (12022): Found design unit 6: FA-behav2 File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl Line: 99
+    Info (12022): Found design unit 7: HA-behav1 File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl Line: 114
+    Info (12023): Found entity 1: andgate File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl Line: 42
+    Info (12023): Found entity 2: xorgate File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl Line: 54
+    Info (12023): Found entity 3: abcgate File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl Line: 66
+    Info (12023): Found entity 4: Cin_map_G File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl Line: 81
+    Info (12023): Found entity 5: FA File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl Line: 95
+    Info (12023): Found entity 6: HA File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl Line: 110
+Info (12021): Found 2 design units, including 1 entities, in source file /work_files/books_and_study_files/engineering/electrical/ee671_vlsi_design/assignment 4/dadda.vhdl
+    Info (12022): Found design unit 1: main-behav File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/dadda.vhdl Line: 16
+    Info (12023): Found entity 1: main File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/dadda.vhdl Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file dut.vhd
+    Info (12022): Found design unit 1: DUT-DutWrap File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/ASS4/DUT.vhd Line: 11
+    Info (12023): Found entity 1: DUT File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/ASS4/DUT.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file testbench.vhd
+    Info (12022): Found design unit 1: Testbench-Behave File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/ASS4/Testbench.vhd Line: 9
+    Info (12023): Found entity 1: Testbench File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/ASS4/Testbench.vhd Line: 7
+Info (12127): Elaborating entity "DUT" for the top level hierarchy
+Info (12128): Elaborating entity "main" for hierarchy "main:add_instance" File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/ASS4/DUT.vhd Line: 22
+Info (12128): Elaborating entity "HA" for hierarchy "main:add_instance|HA:HA_1_1" File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/dadda.vhdl Line: 320
+Info (12128): Elaborating entity "FA" for hierarchy "main:add_instance|FA:FA_2_1" File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/dadda.vhdl Line: 325
+Info (12128): Elaborating entity "xorgate" for hierarchy "main:add_instance|xorgate:T1_xor1" File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/dadda.vhdl Line: 685
+Info (12128): Elaborating entity "Cin_map_G" for hierarchy "main:add_instance|Cin_map_G:T1_and1" File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/dadda.vhdl Line: 777
+Info (12128): Elaborating entity "andgate" for hierarchy "main:add_instance|andgate:T1_and2" File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/dadda.vhdl Line: 780
+Info (12128): Elaborating entity "abcgate" for hierarchy "main:add_instance|abcgate:T2_abc1" File: D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/dadda.vhdl Line: 959
+Info (21057): Implemented 838 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 64 input pins
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 741 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4772 megabytes
+    Info: Processing ended: Thu Nov 02 23:06:46 2023
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:14
+
+

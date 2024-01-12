@@ -1,0 +1,89 @@
+Info: Start Nativelink Simulation process
+
+========= EDA Simulation Settings =====================
+
+Sim Mode              :  Gate
+Family                :  maxv
+Quartus root          :  c:/intelfpga_lite/20.1/quartus/bin64/
+Quartus sim root      :  c:/intelfpga_lite/20.1/quartus/eda/sim_lib
+Simulation Tool       :  modelsim-altera
+Simulation Language   :  vhdl
+Version               :  93
+Simulation Mode       :  GUI
+Sim Output File       :  DUT.vho
+Sim SDF file          :  DUT__vhdl.sdo
+Sim dir               :  simulation\modelsim
+
+=======================================================
+
+Info: Starting NativeLink simulation with ModelSim-Altera software
+Sourced NativeLink script c:/intelfpga_lite/20.1/quartus/common/tcl/internal/nativelink/modelsim.tcl
+POSIX EACCES {permission denied}
+Error: NativeLink simulation flow was NOT successful
+
+
+
+================The following additional information is provided to help identify the cause of error while running nativelink scripts=================
+Nativelink TCL script failed with errorCode:  NONE
+Nativelink TCL script failed with errorInfo:  error copying "D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/ASS4/simulation/modelsim/TRACEFILE.txt" to "D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/ASS4/simulation/modelsim/TRACEFILE.txt": permission denied
+    while executing
+"file copy -force $source_file [pwd]"
+    invoked from within
+"if [file exists $source_file] {
+					    file copy -force $source_file [pwd]
+						dump_files_info  copy_to_sim_dir $source_file
+				    }"
+    ("foreach" body line 20)
+    invoked from within
+"foreach source_info $lib_sources  {
+			    set source_file [lindex $source_info 0]
+			    set hdl_ver [lindex $source_info 1]
+			    if {$hdl_ver == "..."
+    ("foreach" body line 9)
+    invoked from within
+"foreach file_info $tb_files_info {
+			set lib_name [lindex $file_info 0]
+			set lib_sources [lindex $file_info 1]
+			if {[lsearch $lib_map $lib_name] ..."
+    invoked from within
+"if [ catch { open $msim_do_file_name w } msim_do_file ] {
+	nl_postmsg  error "Error: Can't open file $msim_do_file_name: $file_id"
+	set msim_do_file_n..."
+    (procedure "gen_msim_script" line 69)
+    invoked from within
+"gen_msim_script args_hash"
+    ("eval" body line 1)
+    invoked from within
+"eval gen_msim_script args_hash"
+    invoked from within
+"if [ catch {eval gen_msim_script args_hash} msim_do_file_name] {
+	error "$::errorCode" "$::errorInfo"
+    } elseif {$script_mode == 0} {
+	post_message..."
+    (procedure "launch_sim" line 108)
+    invoked from within
+"launch_sim launch_args_hash"
+    ("eval" body line 1)
+    invoked from within
+"eval launch_sim launch_args_hash"
+    invoked from within
+"if [ info exists ::errorCode ] {
+                set savedCode $::errorCode
+                set savedInfo $::errorInfo
+                error $result $..."
+    invoked from within
+"if [catch {eval launch_sim launch_args_hash} result ] {
+            set status 1
+            if [ info exists ::errorCode ] {
+                set save..."
+    (procedure "run_sim" line 74)
+    invoked from within
+"run_sim run_sim_args_hash"
+    invoked from within
+"if [ info exists ::errorCode ] {
+            set savedCode $::errorCode
+            set savedInfo $::errorInfo
+            error "$result" $savedInfo ..."
+    (procedure "run_eda_simulation_tool" line 334)
+    invoked from within
+"run_eda_simulation_tool eda_opts_hash"

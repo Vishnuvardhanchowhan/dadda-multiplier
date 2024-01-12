@@ -1,0 +1,102 @@
+# Reading pref.tcl
+# do DUT_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:07:34 on Nov 02,2023
+# vcom -reportprogress 300 -93 -work work D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/Gates.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package Gates
+# -- Compiling entity andgate
+# -- Compiling architecture trivial of andgate
+# -- Compiling entity xorgate
+# -- Compiling architecture trivial of xorgate
+# -- Compiling entity abcgate
+# -- Compiling architecture trivial of abcgate
+# -- Compiling entity Cin_map_G
+# -- Compiling architecture trivial of Cin_map_G
+# -- Compiling entity FA
+# -- Compiling architecture behav2 of FA
+# -- Compiling entity HA
+# -- Compiling architecture behav1 of HA
+# End time: 23:07:34 on Nov 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/dadda.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:07:35 on Nov 02,2023
+# vcom -reportprogress 300 -93 -work work D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/dadda.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Gates
+# -- Compiling entity main
+# -- Compiling architecture behav of main
+# End time: 23:07:35 on Nov 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/ASS4/DUT.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:07:36 on Nov 02,2023
+# vcom -reportprogress 300 -93 -work work D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/ASS4/DUT.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package Gates
+# -- Compiling entity DUT
+# -- Compiling architecture DutWrap of DUT
+# End time: 23:07:36 on Nov 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/ASS4/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:07:36 on Nov 02,2023
+# vcom -reportprogress 300 -93 -work work D:/Work_Files/Books_and_study_files/Engineering/Electrical/EE671_VLSI_Design/Assignment 4/ASS4/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Testbench
+# -- Compiling architecture Behave of Testbench
+# End time: 23:07:36 on Nov 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  Testbench
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" Testbench 
+# Start time: 23:07:38 on Nov 02,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.testbench(behave)
+# Loading work.gates
+# Loading work.dut(dutwrap)
+# Loading ieee.numeric_std(body)
+# Loading work.main(behav)
+# Loading work.ha(behav1)
+# Loading work.fa(behav2)
+# Loading work.xorgate(trivial)
+# Loading work.cin_map_g(trivial)
+# Loading work.andgate(trivial)
+# Loading work.abcgate(trivial)
+# ** Warning: Design size of 11066 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: SUCCESS, all tests passed.
+#    Time: 1500 ns  Iteration: 0  Instance: /testbench
+# End time: 23:10:02 on Nov 02,2023, Elapsed time: 0:02:24
+# Errors: 0, Warnings: 1
